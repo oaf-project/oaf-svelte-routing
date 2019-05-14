@@ -536,7 +536,7 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-oaf-routing@^1.0.3:
+oaf-routing@^1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-1.0.4.tgz#f90f54074d20dd23a9c5220ba1bce3c796796da6"
   integrity sha512-Kr1sMggma1APJVflzIPKpUa8YVENRVdEZDrGkPlBPd8PnvW7a+aXox31gmxpEFo0Ctk0gUaUTsLunoK9S6X7aQ==
@@ -626,7 +626,7 @@ plur@^2.1.2:
   dependencies:
     irregular-plurals "^1.0.0"
 
-prettier@^1.17.0:
+prettier@^1.17.1:
   version "1.17.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.17.1.tgz#ed64b4e93e370cb8a25b9ef7fef3e4fd1c0995db"
   integrity sha512-TzGRNvuUSmPgwivDqkZ9tM/qTGW9hqDKWOE9YHiyQdixlKbv7kvEqsmDPrcHJTKwthU774TQwZXVtaQ/mMsvjg==
@@ -785,6 +785,11 @@ supports-color@^5.3.0:
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   dependencies:
     has-flag "^3.0.0"
+
+svelte-routing@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.0.0.tgz#9132344964af8907a4a4d0d56a458a1a36937853"
+  integrity sha512-GI8FA/WABMbhL4+N7hK6/vs5f4TXEQQot7qQ7LT+lp8H4i9pqNFyOSdSZ58Kf0mDkykN30HE/A4vpwzjp2STdw==
 
 trim-newlines@^1.0.0:
   version "1.0.0"
