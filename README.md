@@ -60,7 +60,7 @@ const settings = {
   // from this function and set `setPageTitle` to true.
   documentTitle: (location) => new Promise(resolve => setTimeout(() => resolve(document.title))),
   // BYO localization
-  navigationMessage: (title, location): string => `Navigated to ${title}.`,
+  navigationMessage: (title, location) => `Navigated to ${title}.`,
   shouldHandleAction: (previousLocation, nextLocation) => true,
   announcePageNavigation: true,
   setPageTitle: false,
