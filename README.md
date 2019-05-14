@@ -33,7 +33,7 @@ npm install oaf-svelte-routing
 
 ## Basic Usage
 
-`_app.tsx`:
+`main.js`:
 
 ```diff
 import App from "./App.svelte";
