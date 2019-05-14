@@ -64,6 +64,10 @@ const settings = {
   shouldHandleAction: (previousLocation, nextLocation) => true,
   announcePageNavigation: true,
   setPageTitle: false,
+  handleHashFragment: true,
+  // Set this to true for smooth scrolling.
+  // For browser compatibility you might want iamdustan's smoothscroll polyfill https://github.com/iamdustan/smoothscroll
+  smoothScroll: false,
 };
 
 wrapHistory(history, settings);
