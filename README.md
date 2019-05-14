@@ -51,17 +51,17 @@ new App({
 
 ## Advanced Usage
 
-```typescript
+```javascript
 const settings = {
   announcementsDivId: "announcements",
   primaryFocusTarget: "main h1, [role=main] h1",
   // This assumes you're setting the document title via some other means.
   // If you're not, you should return a unique and descriptive page title for each page
   // from this function and set `setPageTitle` to true.
-  documentTitle: (location: string) => new Promise(resolve => setTimeout(() => resolve(document.title))),
+  documentTitle: (location) => new Promise(resolve => setTimeout(() => resolve(document.title))),
   // BYO localization
-  navigationMessage: (title: string, location: string): string => `Navigated to ${title}.`,
-  shouldHandleAction: (previousLocation: string, nextLocation: string) => true,
+  navigationMessage: (title, location): string => `Navigated to ${title}.`,
+  shouldHandleAction: (previousLocation, nextLocation) => true,
   announcePageNavigation: true,
   setPageTitle: false,
 };
