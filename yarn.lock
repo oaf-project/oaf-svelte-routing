@@ -536,10 +536,10 @@ number-is-nan@^1.0.0:
   resolved "https://registry.yarnpkg.com/number-is-nan/-/number-is-nan-1.0.1.tgz#097b602b53422a522c1afb8790318336941a011d"
   integrity sha1-CXtgK1NCKlIsGvuHkDGDNpQaAR0=
 
-oaf-routing@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-1.1.0.tgz#72e42b98dcf9b8a9b81391288577df59f83a70b1"
-  integrity sha512-hK2s+FaIUeWin2UDEMtz03LIz76vbmyQaJ/EcDewIInLogHhAAp6XKG+d748UKs8sNTtHiIKPhS+KTouPzkIxg==
+oaf-routing@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/oaf-routing/-/oaf-routing-2.0.0.tgz#2867efeacc3669a4e7571397133f3b3770f4fc0b"
+  integrity sha512-Ra0JNL879DFpEyzCEPxJ3yQvLKLPVWnVBsv2OBuH7X3wkW/n1oxO31kvdbs2iCb+FxwGc0uqORE1G2CXf3FOyQ==
   dependencies:
     oaf-side-effects "^1.0.3"
     unique-selector "^0.4.1"
@@ -785,11 +785,6 @@ supports-color@^5.3.0:
   integrity sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==
   dependencies:
     has-flag "^3.0.0"
-
-svelte-routing@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/svelte-routing/-/svelte-routing-1.0.0.tgz#9132344964af8907a4a4d0d56a458a1a36937853"
-  integrity sha512-GI8FA/WABMbhL4+N7hK6/vs5f4TXEQQot7qQ7LT+lp8H4i9pqNFyOSdSZ58Kf0mDkykN30HE/A4vpwzjp2STdw==
 
 trim-newlines@^1.0.0:
   version "1.0.0"
