@@ -32,13 +32,25 @@ export const defaultSettings = {
 
 export const wrapHistory = (
   history: History,
-  settings: RouterSettings<Location>,
-) => {
-  // tslint:disable-next-line: no-let
-  let previousLocation = history.location;
+  settingsOverrides?: Partial<RouterSettings<Location>>,
+): (() => void) => {
+  const settings: RouterSettings<Location> = {
+    ...defaultSettings,
+    ...settingsOverrides,
+  };
+
   const oafRouter = createOafRouter(settings, location => location.hash);
 
-  oafRouter.handleFirstPageLoad(history.location);
+  const initialLocation = history.location;
+
+  // HACK Allow DOM to be updated before we repair focus.
+  setTimeout(() => {
+    // The first page load won't trigger history.listen.
+    oafRouter.handleFirstPageLoad(initialLocation);
+  }, settings.renderTimeout);
+
+  // tslint:disable-next-line: no-let
+  let previousLocation = initialLocation;
 
   const unlisten = history.listen(event => {
     oafRouter.handleLocationWillChange(
@@ -47,6 +59,7 @@ export const wrapHistory = (
       event.action,
     );
 
+    // HACK Allow DOM to be updated before we repair focus.
     setTimeout(() => {
       oafRouter.handleLocationChanged(
         previousLocation,
