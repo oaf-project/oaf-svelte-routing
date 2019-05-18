@@ -14,12 +14,13 @@ Documentation at https://oaf-project.github.io/oaf-svelte-routing/
 
 ## Features
 
-* Reset scroll and focus after page navigation
+* Reset scroll and focus after PUSH and REPLACE navigation
+* Restore scroll and focus after POP navigation
 * Set the page title after navigation
 * Announce navigation to users of screen readers
 * Hash fragment support
 
-In lieu of more details, see [Oaf React Router](https://github.com/oaf-project/oaf-react-router/blob/master/README.md#features) for now. The features are basically the same, with the caveat that Oaf Svelte Routing doesn't currently support focus and scroll restoration after POP navigation (see [issue #1](https://github.com/oaf-project/oaf-svelte-routing/issues/1)).
+In lieu of more details, see [Oaf React Router](https://github.com/oaf-project/oaf-react-router/blob/master/README.md#features) for now. The features are basically the same.
 
 ## Installation
 
@@ -58,7 +59,7 @@ const settings = {
   // This assumes you're setting the document title via some other means.
   // If you're not, you should return a unique and descriptive page title for each page
   // from this function and set `setPageTitle` to true.
-  documentTitle: (location) => new Promise(resolve => setTimeout(() => resolve(document.title))),
+  documentTitle: (location) => document.title,
   // BYO localization
   navigationMessage: (title, location) => `Navigated to ${title}.`,
   shouldHandleAction: (previousLocation, nextLocation) => true,
