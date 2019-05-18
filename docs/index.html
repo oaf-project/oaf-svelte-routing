@@ -74,12 +74,13 @@
 				<p>Documentation at <a href="https://oaf-project.github.io/oaf-svelte-routing/">https://oaf-project.github.io/oaf-svelte-routing/</a></p>
 				<h2 id="features">Features</h2>
 				<ul>
-					<li>Reset scroll and focus after page navigation</li>
+					<li>Reset scroll and focus after PUSH and REPLACE navigation</li>
+					<li>Restore scroll and focus after POP navigation</li>
 					<li>Set the page title after navigation</li>
 					<li>Announce navigation to users of screen readers</li>
 					<li>Hash fragment support</li>
 				</ul>
-				<p>In lieu of more details, see <a href="https://github.com/oaf-project/oaf-react-router/blob/master/README.md#features">Oaf React Router</a> for now. The features are basically the same, with the caveat that Oaf svelte Router doesn&#39;t currently support focus and scroll restoration after POP navigation (see <a href="https://github.com/oaf-project/oaf-svelte-routing/issues/1">issue #1</a>).</p>
+				<p>In lieu of more details, see <a href="https://github.com/oaf-project/oaf-react-router/blob/master/README.md#features">Oaf React Router</a> for now. The features are basically the same.</p>
 				<h2 id="installation">Installation</h2>
 				<pre><code class="language-sh"><span class="hljs-comment"># yarn</span>
 yarn add oaf-svelte-routing
@@ -87,7 +88,7 @@ yarn add oaf-svelte-routing
 <span class="hljs-comment"># npm</span>
 npm install oaf-svelte-routing</code></pre>
 				<h2 id="basic-usage">Basic Usage</h2>
-				<p><code>_app.tsx</code>:</p>
+				<p><code>main.js</code>:</p>
 				<pre><code class="language-diff">import App from "./App.svelte";
 <span class="hljs-addition">+ import { globalHistory as history } from "svelte-routing/src/history";</span>
 <span class="hljs-addition">+ import { wrapHistory } from "oaf-svelte-routing";</span>
@@ -100,18 +101,22 @@ new App({
 });
 </code></pre>
 				<h2 id="advanced-usage">Advanced Usage</h2>
-				<pre><code class="language-typescript"><span class="hljs-keyword">const</span> settings = {
-  announcementsDivId: <span class="hljs-string">"announcements"</span>,
-  primaryFocusTarget: <span class="hljs-string">"main h1, [role=main] h1"</span>,
+				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> settings = {
+  <span class="hljs-attr">announcementsDivId</span>: <span class="hljs-string">"announcements"</span>,
+  <span class="hljs-attr">primaryFocusTarget</span>: <span class="hljs-string">"main h1, [role=main] h1"</span>,
   <span class="hljs-comment">// This assumes you're setting the document title via some other means.</span>
   <span class="hljs-comment">// If you're not, you should return a unique and descriptive page title for each page</span>
   <span class="hljs-comment">// from this function and set `setPageTitle` to true.</span>
-  documentTitle: <span class="hljs-function">(<span class="hljs-params">location: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-params">resolve</span> =&gt;</span> setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> resolve(<span class="hljs-built_in">document</span>.title))),
+  documentTitle: <span class="hljs-function">(<span class="hljs-params">location</span>) =&gt;</span> <span class="hljs-built_in">document</span>.title,
   <span class="hljs-comment">// BYO localization</span>
-  navigationMessage: (title: <span class="hljs-built_in">string</span>, location: <span class="hljs-built_in">string</span>): <span class="hljs-function"><span class="hljs-params">string</span> =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
-  shouldHandleAction: <span class="hljs-function">(<span class="hljs-params">previousLocation: <span class="hljs-built_in">string</span>, nextLocation: <span class="hljs-built_in">string</span></span>) =&gt;</span> <span class="hljs-literal">true</span>,
-  announcePageNavigation: <span class="hljs-literal">true</span>,
-  setPageTitle: <span class="hljs-literal">false</span>,
+  navigationMessage: <span class="hljs-function">(<span class="hljs-params">title, location</span>) =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
+  <span class="hljs-attr">shouldHandleAction</span>: <span class="hljs-function">(<span class="hljs-params">previousLocation, nextLocation</span>) =&gt;</span> <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">announcePageNavigation</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">setPageTitle</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">handleHashFragment</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-comment">// Set this to true for smooth scrolling.</span>
+  <span class="hljs-comment">// For browser compatibility you might want iamdustan's smoothscroll polyfill https://github.com/iamdustan/smoothscroll</span>
+  smoothScroll: <span class="hljs-literal">false</span>,
 };
 
 wrapHistory(history, settings);</code></pre>
