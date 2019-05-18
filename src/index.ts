@@ -7,13 +7,13 @@ import {
 
 // tslint:disable-next-line: no-commented-code
 // tslint:disable: no-expression-statement
-// tslint:disable: object-literal-sort-keys
 // tslint:disable: interface-over-type-literal
 
 export { RouterSettings } from "oaf-routing";
 
 export type Location = {
   readonly hash: string;
+  readonly key?: string;
 };
 
 export type HistoryEvent = {
@@ -21,16 +21,17 @@ export type HistoryEvent = {
   readonly action: Action;
 };
 
+export type History = {
+  readonly location: Location;
+  readonly listen: (listener: (event: HistoryEvent) => any) => () => void;
+};
+
 export const defaultSettings = {
   ...oafRoutingDefaultSettings,
-  // TODO support pop page state restoration.
-  restorePageStateOnPop: false,
-  // We're not restoring page state ourselves so leave this enabled.
-  disableAutoScrollRestoration: false,
 };
 
 export const wrapHistory = (
-  history: any,
+  history: History,
   settings: RouterSettings<Location>,
 ) => {
   // tslint:disable-next-line: no-let
@@ -39,14 +40,23 @@ export const wrapHistory = (
 
   oafRouter.handleFirstPageLoad(history.location);
 
-  const unlisten = history.listen((event: HistoryEvent) => {
-    oafRouter.handleLocationChanged(
-      previousLocation,
-      event.location,
-      undefined,
+  const unlisten = history.listen(event => {
+    oafRouter.handleLocationWillChange(
+      previousLocation.key,
+      event.location.key,
       event.action,
     );
-    previousLocation = location;
+
+    setTimeout(() => {
+      oafRouter.handleLocationChanged(
+        previousLocation,
+        event.location,
+        event.location.key,
+        event.action,
+      );
+    }, settings.renderTimeout);
+
+    previousLocation = event.location;
   });
 
   return () => {

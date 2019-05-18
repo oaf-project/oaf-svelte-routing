@@ -8,7 +8,7 @@
     "url": "https://github.com/oaf-project/oaf-svelte-routing.git"
   },
   "dependencies": {
-    "oaf-routing": "^1.1.0"
+    "oaf-routing": "^2.0.0"
   },
   "devDependencies": {
     "prettier": "^1.17.1",
@@ -24,7 +24,7 @@
   "scripts": {
     "build": "tsc",
     "lint": "tslint -p tsconfig.json -c tslint.json",
-    "type-coverage": "type-coverage --at-least 77",
+    "type-coverage": "type-coverage --at-least 99",
     "format": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "format-lint": "prettylint '{src,test}/**/*.{ts,tsx}'",
     "documentation": "typedoc --excludeNotExported --excludePrivate --out docs src && cp docs_config.yml ./docs/_config.yml",
