@@ -8,7 +8,7 @@
     "url": "https://github.com/oaf-project/oaf-svelte-routing.git"
   },
   "dependencies": {
-    "oaf-routing": "^2.0.0"
+    "oaf-routing": "^3.0.0"
   },
   "devDependencies": {
     "prettier": "^1.17.1",
