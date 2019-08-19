@@ -60,9 +60,10 @@ export const wrapHistory = (
     );
 
     // HACK Allow DOM to be updated before we repair focus.
+    const stablePreviousLocation = previousLocation;
     setTimeout(() => {
       oafRouter.handleLocationChanged(
-        previousLocation,
+        stablePreviousLocation,
         event.location,
         event.location.key,
         event.action,
