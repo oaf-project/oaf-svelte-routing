@@ -11,7 +11,7 @@
     "oaf-routing": "^2.0.0"
   },
   "devDependencies": {
-    "prettier": "^1.17.1",
+    "prettier": "^1.19.1",
     "prettylint": "^1.0.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
