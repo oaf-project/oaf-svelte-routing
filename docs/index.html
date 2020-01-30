@@ -54,7 +54,7 @@
 					<a href="globals.html">Globals</a>
 				</li>
 			</ul>
-			<h1> oaf-svelte-routing</h1>
+			<h1>oaf-svelte-routing</h1>
 		</div>
 	</div>
 </header>
@@ -69,10 +69,14 @@
 				<p><a href="https://david-dm.org/oaf-project/oaf-svelte-routing"><img src="https://david-dm.org/oaf-project/oaf-svelte-routing/status.svg" alt="dependencies Status"></a>
 					<a href="https://david-dm.org/oaf-project/oaf-svelte-routing?type=dev"><img src="https://david-dm.org/oaf-project/oaf-svelte-routing/dev-status.svg" alt="devDependencies Status"></a>
 				<a href="https://david-dm.org/oaf-project/oaf-svelte-routing?type=peer"><img src="https://david-dm.org/oaf-project/oaf-svelte-routing/peer-status.svg" alt="peerDependencies Status"></a></p>
-				<h1 id="oaf-svelte-routing">Oaf Svelte Routing</h1>
+				<a href="#oaf-svelte-routing" id="oaf-svelte-routing" style="color: inherit; text-decoration: none;">
+					<h1>Oaf Svelte Routing</h1>
+				</a>
 				<p>An accessible wrapper for <a href="https://github.com/EmilTholin/svelte-routing">Svelte Routing</a>.</p>
 				<p>Documentation at <a href="https://oaf-project.github.io/oaf-svelte-routing/">https://oaf-project.github.io/oaf-svelte-routing/</a></p>
-				<h2 id="features">Features</h2>
+				<a href="#features" id="features" style="color: inherit; text-decoration: none;">
+					<h2>Features</h2>
+				</a>
 				<ul>
 					<li>Reset scroll and focus after PUSH and REPLACE navigation</li>
 					<li>Restore scroll and focus after POP navigation</li>
@@ -81,13 +85,17 @@
 					<li>Hash fragment support</li>
 				</ul>
 				<p>In lieu of more details, see <a href="https://github.com/oaf-project/oaf-react-router/blob/master/README.md#features">Oaf React Router</a> for now. The features are basically the same.</p>
-				<h2 id="installation">Installation</h2>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
 				<pre><code class="language-sh"><span class="hljs-comment"># yarn</span>
 yarn add oaf-svelte-routing
 
 <span class="hljs-comment"># npm</span>
 npm install oaf-svelte-routing</code></pre>
-				<h2 id="basic-usage">Basic Usage</h2>
+				<a href="#basic-usage" id="basic-usage" style="color: inherit; text-decoration: none;">
+					<h2>Basic Usage</h2>
+				</a>
 				<p><code>main.js</code>:</p>
 				<pre><code class="language-diff">import App from "./App.svelte";
 <span class="hljs-addition">+ import { globalHistory as history } from "svelte-routing/src/history";</span>
@@ -100,30 +108,34 @@ new App({
   hydrate: true
 });
 </code></pre>
-				<h2 id="advanced-usage">Advanced Usage</h2>
+				<a href="#advanced-usage" id="advanced-usage" style="color: inherit; text-decoration: none;">
+					<h2>Advanced Usage</h2>
+				</a>
 				<pre><code class="language-javascript"><span class="hljs-keyword">const</span> settings = {
   <span class="hljs-attr">announcementsDivId</span>: <span class="hljs-string">"announcements"</span>,
   <span class="hljs-attr">primaryFocusTarget</span>: <span class="hljs-string">"main h1, [role=main] h1"</span>,
   <span class="hljs-comment">// This assumes you're setting the document title via some other means.</span>
   <span class="hljs-comment">// If you're not, you should return a unique and descriptive page title for each page</span>
   <span class="hljs-comment">// from this function and set `setPageTitle` to true.</span>
-  documentTitle: <span class="hljs-function">(<span class="hljs-params">location</span>) =&gt;</span> <span class="hljs-built_in">document</span>.title,
+  <span class="hljs-attr">documentTitle</span>: <span class="hljs-function">(<span class="hljs-params">location</span>) =&gt;</span> <span class="hljs-built_in">document</span>.title,
   <span class="hljs-comment">// BYO localization</span>
-  navigationMessage: <span class="hljs-function">(<span class="hljs-params">title, location</span>) =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
+  <span class="hljs-attr">navigationMessage</span>: <span class="hljs-function">(<span class="hljs-params">title, location</span>) =&gt;</span> <span class="hljs-string">`Navigated to <span class="hljs-subst">${title}</span>.`</span>,
   <span class="hljs-attr">shouldHandleAction</span>: <span class="hljs-function">(<span class="hljs-params">previousLocation, nextLocation</span>) =&gt;</span> <span class="hljs-literal">true</span>,
   <span class="hljs-attr">announcePageNavigation</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-attr">setPageTitle</span>: <span class="hljs-literal">false</span>,
   <span class="hljs-attr">handleHashFragment</span>: <span class="hljs-literal">true</span>,
   <span class="hljs-comment">// Set this to true for smooth scrolling.</span>
   <span class="hljs-comment">// For browser compatibility you might want iamdustan's smoothscroll polyfill https://github.com/iamdustan/smoothscroll</span>
-  smoothScroll: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">smoothScroll</span>: <span class="hljs-literal">false</span>,
 };
 
 wrapHistory(history, settings);</code></pre>
-				<h3 id="a-note-on-focus-outlines">A note on focus outlines</h3>
+				<a href="#a-note-on-focus-outlines" id="a-note-on-focus-outlines" style="color: inherit; text-decoration: none;">
+					<h3>A note on focus outlines</h3>
+				</a>
 				<p>You may see focus outlines around your <code>h1</code> elements (or elsewhere, per <code>primaryFocusTarget</code>) when using Oaf Svelte Routing.</p>
 				<p>You might be tempted to remove these focus outlines with something like the following:</p>
-				<pre><code class="language-css"><span class="hljs-selector-attr">[tabindex="-1"]</span><span class="hljs-selector-pseudo">:focus</span> {
+				<pre><code class="language-css"><span class="hljs-selector-attr">[tabindex=<span class="hljs-string">"-1"</span>]</span><span class="hljs-selector-pseudo">:focus</span> {
   <span class="hljs-attribute">outline</span>: <span class="hljs-number">0</span> <span class="hljs-meta">!important</span>;
 }</code></pre>
 				<p>Don&#39;t do this! Focus outlines are important for accessibility. See for example:</p>
@@ -134,7 +146,9 @@ wrapHistory(history, settings);</code></pre>
 				</ul>
 				<p>Note that <a href="https://github.com/twbs/bootstrap/issues/28425">Bootstrap 4 unfortunately removes these focus outlines</a>. If you use Bootstrap, you can restore them with <a href="https://github.com/oaf-project/oaf-bootstrap-4">Oaf Bootstrap 4</a>.</p>
 				<p>All that said, if you absolutely <em>must</em> remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using the <a href="https://github.com/WICG/focus-visible"><code>:focus-visible</code> polyfill</a> so focus outlines are only hidden from mouse users, <em>not</em> keyboard users.</p>
-				<h2 id="see-also">See also</h2>
+				<a href="#see-also" id="see-also" style="color: inherit; text-decoration: none;">
+					<h2>See also</h2>
+				</a>
 				<ul>
 					<li><a href="https://github.com/oaf-project/oaf-routing">Oaf Routing</a></li>
 					<li><a href="https://github.com/oaf-project/oaf-side-effects">Oaf Side Effects</a></li>
@@ -148,7 +162,7 @@ wrapHistory(history, settings);</code></pre>
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+						<a href="modules/_index_.html">&quot;index&quot;</a>
 					</li>
 				</ul>
 			</nav>
@@ -171,6 +185,7 @@ wrapHistory(history, settings);</code></pre>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
@@ -219,7 +234,7 @@ wrapHistory(history, settings);</code></pre>
 	</div>
 </footer>
 <div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
 <script src="assets/js/main.js"></script>
