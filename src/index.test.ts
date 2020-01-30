@@ -1,6 +1,5 @@
 // tslint:disable:no-expression-statement no-object-mutation no-duplicate-string no-empty
 
-// @ts-ignore
 import { globalHistory as history } from "svelte-routing/src/history";
 import { wrapHistory } from ".";
 
