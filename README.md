@@ -95,5 +95,6 @@ Note that [Bootstrap 4 unfortunately removes these focus outlines](https://githu
 All that said, if you absolutely _must_ remove focus outlines (stubborn client, stubborn boss, stubborn designer, whatever), consider using the [`:focus-visible` polyfill](https://github.com/WICG/focus-visible) so focus outlines are only hidden from mouse users, _not_ keyboard users.
 
 ## See also
+* The coversation at https://github.com/EmilTholin/svelte-routing/issues/25
 * [Oaf Routing](https://github.com/oaf-project/oaf-routing)
 * [Oaf Side Effects](https://github.com/oaf-project/oaf-side-effects)
