@@ -8,12 +8,21 @@
     "url": "https://github.com/oaf-project/oaf-svelte-routing.git"
   },
   "dependencies": {
-    "oaf-routing": "^2.0.0"
+    "oaf-routing": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-transform-modules-commonjs": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@types/jest": "^25.1.1",
+    "babel-jest": "^25.1.0",
+    "jest": "^25.1.0",
     "prettier": "^1.19.1",
     "prettylint": "^1.0.0",
-    "tslint": "^5.20.1",
+    "svelte-routing": "^1.0.0",
+    "ts-jest": "^25.1.0",
+    "tslint": "^6.0.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
     "tslint-sonarts": "^1.9.0",
@@ -28,7 +37,8 @@
     "format": "prettier --write '{src,test}/**/*.{ts,tsx}'",
     "format-lint": "prettylint '{src,test}/**/*.{ts,tsx}'",
     "documentation": "typedoc --excludeNotExported --excludePrivate --out docs src && cp docs_config.yml ./docs/_config.yml",
-    "release": "yarn build && yarn lint && yarn type-coverage && yarn format-lint && yarn publish && yarn documentation"
+    "release": "yarn build && yarn lint && yarn type-coverage && yarn format-lint && yarn publish && yarn documentation",
+    "test": "jest"
   },
   "prettier": {
     "trailingComma": "all"

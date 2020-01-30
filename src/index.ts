@@ -1,5 +1,4 @@
 import {
-  Action,
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
   RouterSettings,
@@ -11,24 +10,23 @@ import {
 
 export { RouterSettings } from "oaf-routing";
 
-export type Location = {
-  readonly hash: string;
-  readonly key?: string;
-};
+export {
+  Action,
+  History,
+  HistoryEvent,
+  Location,
+} from "svelte-routing/src/history";
 
-export type HistoryEvent = {
-  readonly location: Location;
-  readonly action: Action;
-};
-
-export type History = {
-  readonly location: Location;
-  readonly listen: (listener: (event: HistoryEvent) => any) => () => void;
-};
+import { History, Location } from "svelte-routing/src/history";
 
 export const defaultSettings = {
   ...oafRoutingDefaultSettings,
 };
+
+// HACK we need a way to track where focus and scroll were left on the first loaded page
+// but we won't have an entry in history for this initial page, so we just make up a key.
+const orInitialKey = (key: string | undefined): string =>
+  key !== undefined ? key : "initial";
 
 export const wrapHistory = (
   history: History,
@@ -54,8 +52,8 @@ export const wrapHistory = (
 
   const unlisten = history.listen(event => {
     oafRouter.handleLocationWillChange(
-      previousLocation.key,
-      event.location.key,
+      orInitialKey(previousLocation.key),
+      orInitialKey(event.location.key),
       event.action,
     );
 
@@ -65,7 +63,7 @@ export const wrapHistory = (
       oafRouter.handleLocationChanged(
         stablePreviousLocation,
         event.location,
-        event.location.key,
+        orInitialKey(event.location.key),
         event.action,
       );
     }, settings.renderTimeout);
