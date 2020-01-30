@@ -3,7 +3,9 @@ declare module "svelte-routing/src/history" {
 
   export type Location = {
     readonly hash: string;
-    readonly key?: string;
+    // svelte-routing ensures this has a value:
+    // `key: (source.history.state && source.history.state.key) || "initial"`
+    readonly key: string;
   };
 
   export type HistoryEvent = {
