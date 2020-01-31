@@ -13,7 +13,7 @@ beforeEach(() => {
   window.document.title = "";
 });
 
-describe("oaf-react-router", () => {
+describe("oaf-svelte-routing", () => {
   test("doesn't throw when wrapping and unwrapping history", () => {
     const unwrap = wrapHistory(history);
     unwrap();
