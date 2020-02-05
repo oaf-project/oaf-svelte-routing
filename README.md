@@ -89,6 +89,7 @@ Don't do this! Focus outlines are important for accessibility. See for example:
 * https://www.w3.org/TR/UNDERSTANDING-WCAG20/navigation-mechanisms-focus-visible.html
 * https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/F78
 * http://www.outlinenone.com/
+* Although there is some debate: https://github.com/w3c/wcag/issues/1001
 
 Note that [Bootstrap 4 unfortunately removes these focus outlines](https://github.com/twbs/bootstrap/issues/28425). If you use Bootstrap, you can restore them with [Oaf Bootstrap 4](https://github.com/oaf-project/oaf-bootstrap-4).
 
