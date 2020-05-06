@@ -32,7 +32,7 @@ export const wrapHistory = (
     ...settingsOverrides,
   };
 
-  const oafRouter = createOafRouter(settings, location => location.hash);
+  const oafRouter = createOafRouter(settings, (location) => location.hash);
 
   const initialLocation = history.location;
 
@@ -45,7 +45,7 @@ export const wrapHistory = (
   // tslint:disable-next-line: no-let
   let previousLocation = initialLocation;
 
-  const unlisten = history.listen(event => {
+  const unlisten = history.listen((event) => {
     oafRouter.handleLocationWillChange(
       previousLocation.key,
       event.location.key,
