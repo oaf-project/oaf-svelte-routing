@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.1",
-    "@babel/plugin-transform-modules-commonjs": "^7.9.6",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.1",
     "@babel/preset-env": "^7.9.6",
     "@babel/preset-typescript": "^7.9.0",
     "@types/jest": "^25.2.1",
