@@ -21,7 +21,7 @@
     "prettier": "^2.0.5",
     "prettylint": "^1.0.0",
     "svelte-routing": "^1.4.2",
-    "ts-jest": "^25.4.0",
+    "ts-jest": "^26.1.1",
     "tslint": "^6.1.2",
     "tslint-config-prettier": "^1.18.0",
     "tslint-immutable": "^6.0.1",
