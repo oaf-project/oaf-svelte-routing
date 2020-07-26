@@ -1,6 +1,5 @@
 [![Build Status](https://travis-ci.org/oaf-project/oaf-svelte-routing.svg?branch=master)](https://travis-ci.org/oaf-project/oaf-svelte-routing)
 [![Known Vulnerabilities](https://snyk.io/test/github/oaf-project/oaf-svelte-routing/badge.svg?targetFile=package.json)](https://snyk.io/test/github/oaf-project/oaf-svelte-routing?targetFile=package.json)
-[![Greenkeeper badge](https://badges.greenkeeper.io/oaf-project/oaf-svelte-routing.svg)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/oaf-svelte-routing.svg)](https://www.npmjs.com/package/oaf-svelte-routing)
 
 [![dependencies Status](https://david-dm.org/oaf-project/oaf-svelte-routing/status.svg)](https://david-dm.org/oaf-project/oaf-svelte-routing)
