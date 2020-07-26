@@ -1,5 +1,7 @@
-// tslint:disable:no-expression-statement no-object-mutation no-duplicate-string no-empty
-
+/* eslint-disable sonarjs/no-duplicate-string */
+/* eslint-disable functional/immutable-data */
+/* eslint-disable functional/functional-parameters */
+/* eslint-disable functional/no-expression-statement */
 import { globalHistory as history } from "svelte-routing/src/history";
 import { wrapHistory } from ".";
 
@@ -80,6 +82,7 @@ describe("oaf-svelte-routing", () => {
 
     const main = document.createElement("main");
     const mainH1 = document.createElement("h1");
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     mainH1.focus = () => {};
     main.append(mainH1);
     const randomButton = document.createElement("button");

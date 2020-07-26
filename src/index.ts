@@ -1,12 +1,12 @@
+/* eslint-disable @typescript-eslint/no-floating-promises */
+/* eslint-disable functional/functional-parameters */
+/* eslint-disable functional/no-expression-statement */
+/* eslint-disable functional/no-return-void */
 import {
   createOafRouter,
   defaultSettings as oafRoutingDefaultSettings,
   RouterSettings,
 } from "oaf-routing";
-
-// tslint:disable-next-line: no-commented-code
-// tslint:disable: no-expression-statement
-// tslint:disable: interface-over-type-literal
 
 export { RouterSettings } from "oaf-routing";
 
@@ -42,7 +42,7 @@ export const wrapHistory = (
     oafRouter.handleFirstPageLoad(initialLocation);
   }, settings.renderTimeout);
 
-  // tslint:disable-next-line: no-let
+  // eslint-disable-next-line functional/no-let
   let previousLocation = initialLocation;
 
   const unlisten = history.listen((event) => {

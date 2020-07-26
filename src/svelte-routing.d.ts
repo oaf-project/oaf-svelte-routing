@@ -1,3 +1,5 @@
+/* eslint-disable functional/no-return-void */
+/* eslint-disable functional/no-mixed-type */
 declare module "svelte-routing/src/history" {
   export type Action = "PUSH" | "POP" | "REPLACE";
 
