@@ -11,7 +11,7 @@
     "oaf-routing": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.10.5",
+    "@babel/core": "^7.12.9",
     "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
